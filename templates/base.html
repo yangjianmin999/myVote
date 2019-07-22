@@ -1,0 +1,59 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}投票网站{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+</head>
+<body>
+<div id="container" >
+    <div id="header" >
+        <div id="title" >投票网站</div>
+        <nav>
+            <ul class="clear">
+            <li class="first"><a href="/polls/">首页</a></li>
+            <li>
+                <span class="Darrow"></span>
+                <a href="#">菜单二</a>
+                <dl>
+                    <dt><span class="arrow"></span></dt>
+                    <dd><a href="#">子菜单一</a></dd>
+                    <dd><a href="#">子菜单二</a></dd>
+                    <dd><a href="#">子菜单三子菜单三</a></dd>
+                </dl>
+            </li>
+            <li>
+                <span class="Darrow"></span>
+                <a href="#">菜单三</a>
+                <dl>
+                    <dt><span class="arrow"></span></dt>
+                    <dd><a href="#">子菜单一</a></dd>
+                    <dd><a href="#">子菜单二</a></dd>
+                    <dd><a href="#">子菜单三子菜单三</a></dd>
+                </dl>
+            </li>
+            <li>
+                <span class="Darrow"></span>
+                <a href="#">菜单四</a>
+                <dl>
+                    <dt><span class="arrow"></span></dt>
+                    <dd><a href="#">子菜单一</a></dd>
+                    <dd><a href="#">子菜单二</a></dd>
+                    <dd><a href="#">子菜单三</a></dd>
+                    <dd><a href="#">子菜单四</a></dd>
+                </dl>
+            </li>
+            <li class="last"><a href="#">菜单五</a></li>
+        </ul>
+        </nav>
+    </div>
+    <div id="main" >
+            {% block main %}{% endblock %}
+    </div>
+    <div id="footer">
+                <p style="color: white"><a href="#"class="ass">关注我们</a></p>
+    </div>
+</div>
+</body>
+</html>

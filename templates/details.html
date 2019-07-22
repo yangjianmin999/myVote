@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}投票网站-详情页{% endblock %}
+{% block main %}
+    <h3>{{ question.questionText }}</h3>
+    {% if errormsg %} <p><strong>{{ errormsg }}</strong></p>{% endif %}
+    <form action="{% url 'polls:vote' question.id %}" method="post">
+        {% csrf_token %}
+        {% for c in question.choice_set.all %}
+            <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ c.id }}">
+            <label for="choice{{ forloop.counter }}">{{ c.choiceText }}</label>
+            <br>
+        {% endfor %}
+        <input type="submit" value="投票">
+    </form>
+{% endblock %}

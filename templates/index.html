@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}投票网站-列表页{% endblock %}
+{% block main %}
+{#    <img src="{% static 'imgs/2.jpg' %}" alt="">#}
+    <h3>热门投票</h3>
+    {% if question_list %}
+        <ul>
+        {% for q in question_list %}
+            <li><a href="{% url 'polls:details'  q.id %}">{{ q.questionText }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>没有有效的投票信息</p>
+    {% endif %}
+{% endblock %}
+

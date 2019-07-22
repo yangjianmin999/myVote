@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}{{ block.super }}-结果页{% endblock %}
+{% block main %}
+    <h3>{{ question.questionText }}</h3>
+    <ul>
+        {% for c in question.choice_set.all %}
+            <li>
+            {{ c.choiceText }}-----{{ c.vote }}vote{{ c.vote|pluralize }}
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'polls:details' question.id %}">重新投票？</a>
+{% endblock %}
