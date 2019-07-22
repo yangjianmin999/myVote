@@ -1,0 +1,2 @@
+# myVote
+django vote project
